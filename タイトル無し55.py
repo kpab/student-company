@@ -336,5 +336,4 @@ if FakeMode:
     plot_results(score_stats=fake_score_stats, offer_rates=fake_offer_rates, applications_stats= fake_applications_stats)
     pass
 else:
-    print("score_stats", score_stats)
     plot_results(score_stats, offer_rates, applications_stats)

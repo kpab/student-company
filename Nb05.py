@@ -1,6 +1,5 @@
 import random
 import copy
-import FakeDatas
 
 s_rank_list = [1, 2, 3, 4, 5]
 c_rank_list = [1, 2, 3, 4, 5, 6, 7] # 高い順
@@ -18,19 +17,14 @@ class Student:
     def __str__(self):
         return f"id: {self.id}, rank: {self.rank}"
 
-
     def update(self, day, recruiting_c):
         if day >= self.start_day and (day - self.start_day) % self.cycle == 0:
             self.apply(recruiting_c)
 
-    def apply(self, num_companies):
-        
-        pass
-        
+    def apply(self, num_companies, s_to_c):
+
+        return
             
-        
-
-
 
 class Company:
     def __init__(self, id, c_positions):
@@ -46,7 +40,6 @@ def Simulation():
     day = 0
     students = []
     companies = []
-    
 
     # -- 初期化 --
     for s in range(num_students):
@@ -61,16 +54,16 @@ def Simulation():
     recruiting_c = list(range(num_companies))
     # print(recruiting_c)
     
+    s_to_c = {} # 応募管理リスト
 
+    # s_to_c = {"学生id": ["企業のid", "企業のid", "企業のid"], ...}
+    # 応募
+    for student in students:
+        s_to_c[student.id] = []# random3つ
 
-    
-
-
-
-
-
-
-
+    limit = True
+    while limit:
+        print("ss")
 
 if __name__ == "__main__":
     Simulation()
