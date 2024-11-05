@@ -1,5 +1,6 @@
 import random
 import copy
+import FakeDatas
 
 s_rank_list = [1, 2, 3, 4, 5]
 c_rank_list = [1, 2, 3, 4, 5, 6, 7] # 高い順
@@ -18,8 +19,10 @@ class Student:
         return f"id: {self.id}, rank: {self.rank}"
 
 
-    def update(self):
-        pass
+    def update(self, day, recruiting_c):
+        if day >= self.start_day and (day - self.start_day) % self.cycle == 0:
+            self.apply(recruiting_c)
+
     def apply(self, num_companies):
         
         pass
@@ -57,6 +60,8 @@ def Simulation():
     # idで募集中の企業を管理
     recruiting_c = list(range(num_companies))
     # print(recruiting_c)
+    
+
 
     
 
